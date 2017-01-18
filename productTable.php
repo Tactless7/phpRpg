@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Product Table</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<table>
@@ -20,7 +21,7 @@
 			<td><?= $value->getName()?></td>
 			<td><?= $value->getPrice()?></td>
 			<td><?= (method_exists($value, 'getProductorName')) ? $value->getProductorName() : null ?></td>
-			<td><?= (method_exists($value, 'getHarvestedAt')) ? $value->getHarvestedAt() : null ?></td>
+			<td><?= (method_exists($value, 'getHarvestedAt')) ? Date("Y-m-d H:i:s", $value->getHarvestedAt()) : null ?></td>
 			<td><?= (method_exists($value, 'getBrand')) ? $value->getBrand() : null ?></td>
 		</tr>
 		<?php endforeach; ?>
