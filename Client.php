@@ -4,7 +4,7 @@
 	
 	class Client extends Utilisateur{
 		private $_billAmount;
-		private $_cart [];
+		private $_cart = [];
 
 
 		public function getBillAmount(){
@@ -12,7 +12,7 @@
 		}
 
 		public function setBillAmount($amount){
-			$this->_billAmount += $amount;
+			$this->_billAmount = $amount;
 		}
 
 		public function getCart(){
@@ -20,11 +20,11 @@
 		}
 
 		public function addProductToCart($product){
-			array_push($this->-cart, $item);
+			array_push($this->_cart, $product);
 		}
 
-		public function buy(){
-
+		public function buy($product){
+			$this->_billAmount += $product->getPrice();
 		}
 
 	}
