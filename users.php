@@ -1,3 +1,3 @@
 <?php 
 
-include __DIR__.'/views/usersTable.php' ?>
+require __DIR__.'/views/usersTable.php' ?>
