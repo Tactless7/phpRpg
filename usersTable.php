@@ -1,5 +1,5 @@
 <?php require 'users.php';
-print_r($usersArray) ?><!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -13,16 +13,13 @@ print_r($usersArray) ?><!DOCTYPE html>
 			<th>Email</th>
 			<th>Created At</th>
 		</tr>
+		<?php foreach ($usersArray as $key => $value) : ?>
 		<tr>
-			<td><?= $janeDoe->getId() ?></td>
-			<td><?= $janeDoe->getEmail()?></td>
-			<td><?= $janeDoe->getCreatedAt()?></td>
+			<td><?= $value->getId() ?></td>
+			<td><?= $value->getEmail()?></td>
+			<td><?= $value->getCreatedAt()?></td>
 		</tr>
-		<tr>
-			<td><?= $johnSmith->getId() ?></td>
-			<td><?= $johnSmith->getEmail()?></td>
-			<td><?= $johnSmith->getCreatedAt()?></td>
-		</tr>
+	<?php endforeach; ?>
 	</table>
 
 	
