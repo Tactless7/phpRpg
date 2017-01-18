@@ -18,6 +18,11 @@
 		public function getCart(){
 			return $this->_cart;
 		}
+		public function displayCart(){
+			foreach ($this->_cart as $key => $value) {
+				echo '<li>'. $value->getName() .'</li>';
+			}
+		}
 
 		public function addProductToCart($product){
 			array_push($this->_cart, $product);
