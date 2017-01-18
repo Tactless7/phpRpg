@@ -1,4 +1,4 @@
-<?php $productArray = require 'products.php' ?><!DOCTYPE html>
+<?php $productArray = require_once 'products.php' ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
