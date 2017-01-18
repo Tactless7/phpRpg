@@ -19,12 +19,12 @@
 			return $this->_cart;
 		}
 
-		public function setCart($item){
+		public function addProductToCart($product){
 			array_push($this->-cart, $item);
 		}
 
 		public function buy(){
-			
+
 		}
 
 	}
