@@ -1,9 +1,9 @@
-<?php $productArray = require_once 'products.php' ?><!DOCTYPE html>
+<?php $productArray = require_once $_SERVER['DOCUMENT_ROOT'].'/data/products.php' ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Product Table</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	<table>

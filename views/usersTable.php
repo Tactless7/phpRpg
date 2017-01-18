@@ -1,10 +1,10 @@
-<?php $usersArray = require 'users.php';
+<?php $usersArray = require $_SERVER['DOCUMENT_ROOT'].'/data/users.php';
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Users Table</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	

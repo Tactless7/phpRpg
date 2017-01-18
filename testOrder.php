@@ -1,12 +1,12 @@
 <?php  
-	require_once 'products.php';
-	require_once 'users.php';
+	require_once __DIR__.'/data/products.php';
+	require_once __DIR__.'/data/users.php';
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Test</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
