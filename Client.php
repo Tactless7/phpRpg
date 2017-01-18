@@ -1,6 +1,6 @@
 <?php 
 	
-	require 'Utilisateur.php';
+	require 'User.php';
 	
 	class Client extends Utilisateur{
 
