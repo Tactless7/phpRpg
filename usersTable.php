@@ -1,4 +1,4 @@
-<?php require 'users.php';
+<?php $usersArray = require 'users.php';
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@
 			<td><?= $value->getEmail()?></td>
 			<td><?= $value->getCreatedAt()?></td>
 		</tr>
-	<?php endforeach; ?>
+		<?php endforeach; ?>
 	</table>
 
 	
