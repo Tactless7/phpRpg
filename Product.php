@@ -8,7 +8,7 @@
 		public function __construct($id, $name, $price){
 			$this->_id = $id;
 			$this->_name = $name;
-			$this->_price = $price
+			$this->_price = $price;
 		}
 
 		public function getPrice(){
