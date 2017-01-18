@@ -1,7 +1,7 @@
 <?php 
 
-	require 'Vegetable.php';
-	require 'Cloth.php';
+	require_once 'Vegetable.php';
+	require_once 'Cloth.php';
 
 	$banane = new Vegetable(1, 'Banane', 2, 'Banania', mktime(0, 0, 0, 1, 17, 2017));
 	$poireau = new Vegetable(2, 'Poireau', 5, 'Poireaumania', mktime(0, 0, 0, 1, 18, 2017));
