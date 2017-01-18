@@ -8,7 +8,7 @@
 		public function __construct($email, $id){
 			$this->_email = $email;
 			$this->_id = $id;
-			$this->_createdAt = Date("d-m-Y H:i:s");
+			$this->_createdAt = Date("Y-m-d H:i:s");
 		}
 
 		public function getEmail(){
