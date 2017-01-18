@@ -18,4 +18,20 @@
 			$diff = (time() - $this->_harvestedAt) / (60 * 60);
 			return ($diff < 24) ? true : false;
 		}
+
+		public function getProductorName(){
+			return $this->_productorName;
+		}
+
+		public function setProductorName($productor){
+			$this->_productorName = $productor;
+		}
+
+		public function getHarvestedAt(){
+			return $this->_harvestedAt;
+		}
+
+		public function setHarvestedAt($date){
+			$this->_harvestedAt = $date;
+		}
 	}
