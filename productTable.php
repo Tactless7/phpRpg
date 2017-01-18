@@ -5,7 +5,6 @@
 	<title>Product Table</title>
 </head>
 <body>
-	<?php var_dump($productArray) ?>
 	<table>
 		<tr>
 			<th>Id</th>
@@ -20,9 +19,9 @@
 			<td><?= $value->getId() ?></td>
 			<td><?= $value->getName()?></td>
 			<td><?= $value->getPrice()?></td>
-			<td><?= $value->getProductorName() ?></td>
-			<td><?= $value->getHarvestedAt() ?></td>
-			<td><?= $value->getBrand() ?></td>
+			<td><?= (method_exists($value, 'getProductorName')) ? $value->getProductorName() : null ?></td>
+			<td><?= (method_exists($value, 'getHarvestedAt')) ? $value->getHarvestedAt() : null ?></td>
+			<td><?= (method_exists($value, 'getBrand')) ? $value->getBrand() : null ?></td>
 		</tr>
 		<?php endforeach; ?>
 	</table>
