@@ -24,13 +24,13 @@
 			<?php endforeach ?>
 		</select>
 
-		<select name="product1" id="product1">
+		<select name="product2" id="product1">
 			<?php foreach ($productArray as $key => $value): ?>
 			<option value="<?= $value->getId() ?>"> <?= $value->getName() ?> </option>
 			<?php endforeach ?>
 		</select>
 
-		<select name="product1" id="product1">
+		<select name="product3" id="product1">
 			<?php foreach ($productArray as $key => $value): ?>
 			<option value="<?= $value->getId() ?>"> <?= $value->getName() ?> </option>
 			<?php endforeach ?>
