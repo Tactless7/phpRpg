@@ -1,9 +1,23 @@
 <?php 
-
+	$userArray = require_once __DIR__.'/data/users.php';
+	$productArray = require_once __DIR__.'/data/products.php';
 	
-	$idClient = $_POST['client'];
-	$idProduct1 = $_POST['product1'];
-	$idProduct2 = $_POST['product2'];
-	$idProduct3 = $_POST['product3'];
+	$idClient = intval($_POST['client']);
+	$idProduct1 = intval($_POST['product1']);
+	$idProduct2 = intval($_POST['product2']);
+	$idProduct3 = intval($_POST['product3']);
+
+	$userArray[$idClient]->addProductToCart($productArray[$idProduct1]);
+	$userArray[$idClient]->buy($productArray[$idProduct1]->getPrice()); // A debugger : call function getPrice on integer
+
+	$userArray[$idClient]->addProductToCart($productArray[$idProduct2]);
+	$userArray[$idClient]->buy($productArray[$idProduct2]->getPrice());
+
+	$userArray[$idClient]->addProductToCart($productArray[$idProduct3]);
+	$userArray[$idClient]->buy($productArray[$idProduct3]->getPrice());
+
+	// var_dump($userArray[$idClient]);
+	echo $userArray[$idClient]->getBillAmount();
+
 
 	require_once __DIR__.'/views/validateOrder.php';
