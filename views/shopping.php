@@ -11,7 +11,7 @@
 
 	<h1>Venez Acheter chez nous, c'est presque gratuit !</h1>
 
-	<form action="/shopping.php" method="POST">
+	<form action=__DIR__."/validateOrder.php" method="POST">
 		<select name="client" id="client">
 		<?php foreach ($userArray as $key => $value) :?>
 			<option value="<?= $value->getId() ?>"> <?= $value->getEmail() ?> </option>
