@@ -1,5 +1,3 @@
-# phpRpg
-
 # php-rpgmgch
 
 # Step 1 : Afficher un tableau d'utilisateurs
@@ -45,6 +43,18 @@ $users = require('users.php');
 ### Show Time
 Lancer ensuite votre serveur php et vérifier qu'en vous rendant à cette url `/userTable.php` , le tableau s'affiche correctement.
 
+### Workspace
+A ce stade, votre workspace doit ressembler à cela : 
+
+```
+/
+| User.php
+| Client.php
+| users.php
+| userTable.php
+
+```
+
 ***
 
 # Step 2 : Afficher le stock de produits
@@ -74,6 +84,23 @@ Créer un fichier products.php qui retourne un tableau contenant deux légumes e
 ### productTable.php
 Créer productTable.php qui renvoie un tableau html avec la liste des produits récemment créés.
 
+### Workspace
+A ce stade, votre workspace doit ressembler à cela : 
+
+```
+/
+| User.php
+| Client.php
+| users.php
+| userTable.php
+| Product.php
+| Vegetable.php
+| Cloth.php
+| products.php
+| productTable.php
+
+```
+
 ***
 
 # Step 3 : Shopping
@@ -95,9 +122,47 @@ Créer un fichier testOrder.php où vous effectuerez des tests des scenarii suiv
 
 Afficher toutes les informations nécessaires.
 
+
+### Workspace
+A ce stade, votre workspace doit ressembler à cela : 
+
+```
+/
+| User.php
+| Client.php
+| users.php
+| userTable.php
+| Product.php
+| Vegetable.php
+| Cloth.php
+| products.php
+| productTable.php
+| testOrder.php
+
+```
+
+*** 
+
+# Php Break
+Jusque ici vous avez dû tester votre programme en lançant un server web php avec la commande suivante 
+```
+php -S 0.0.0.0:3000
+```
+
+Puis en allant sur votre client web, localhost:3000/testOrder.php
+
+
+Il est également possible d'exécuter un seul fichier php (comme fait dans la branche *step1*) pour tester rapidement. Par exemple, pour exécuter productTable.php :
+
+```
+php productTable.php
+```
+
 ***
 
 # Step 4 : Clean up
+Bon, notre progamme s'agrandit et vous vous êtes rendus compte que cela devient difficile de s'y retrouver puisque tous les fichiers sont au même niveau dans votre workspace. On va réorganiser tout cela en suivant le pattern MVC.
+
 ### models
 Créer un répertoire `models` dans lequel vous placez vos modèles : Product, Vegetable, Cloth, User, Client.
 
@@ -107,6 +172,8 @@ Testez. Tout fonctionne encore ?
 
 ### data
 Créer un répertoire `data` dans lequel vous placez vos données factices : users.php et products.php.
+
+*ce dossier va agir comme notre base de données. Mais pas persistente, évidemment, puisque rechargée à chaque requête*
 
 ### views
 Créer un répertoire `views` dans lequel vous placerez vos vues : userTable.php et productTable.php
@@ -118,12 +185,34 @@ Créer un fichier `users.php` à la racine de votre projet. Quand l'utilisateur 
 
 Faites de même en créant `products.php` qui a un comportement similaire mais pour les produits.
 
-C'est toujours bon ? On continue
+C'est toujours bon ? On continue.
+
+### Workspace
+A ce stade, votre workspace doit ressembler à cela : 
+
+```
+/
+| data
+  | users.php
+  | products.php
+| models
+  | User.php
+  | Client.php
+  | Product.php
+  | Vegetable.php
+  | Cloth.php
+| views
+  | userTable.php
+    | productTable.php
+| testOrder.php
+
+```
+
 
 ***
 
 # Step 5 : Shopping Time
-Créer une page shopping.php qui va permettre de créer une commande pour un client.
+Créer une page `shopping.php` qui va permettre de créer une commande pour un client. 
 
 Afficher un select qui va permettre d'afficher et de sélectionner un client.
 
@@ -131,8 +220,36 @@ Afficher 3 `select` successifs qui vont permettre de sélectionner chacun un pro
 
 Ajouter un bouton d'envoi de commande.
 
-Une fois que la commande a été validée, afficher un récapitulatif de la commande (le `cart` du client sélectionné) : liste des produits, prix total ...
+Pour ce faire, vous prendrez soin de bien séparer le controlleur de la vue : créer deux fichiers `shopping.php` : un à la racine et un dans `/views`.
 
+Une fois que la commande est passée, afficher un récapitulatif de la commande sur la page `validateOrder.php` (le `cart` du client sélectionné) : liste des produits, prix total ...
+
+Pour ce faire, créer une nouvelle vue `views/validateOrder.php` qui sera utilisée par votre controller `validateOrder.php`.
+
+### Workspace
+A ce stade, votre workspace doit ressembler à cela : 
+
+```
+/
+| data
+  | users.php
+  | products.php
+| models
+  | User.php
+  | Client.php
+  | Product.php
+  | Vegetable.php
+  | Cloth.php
+| views
+  | userTable.php
+    | productTable.php
+    | validateOrder.php
+    | shopping.php
+| testOrder.php
+| shopping.php
+| validateOrder.php
+
+```
 
 ***
 # Step 6 - Bonus
