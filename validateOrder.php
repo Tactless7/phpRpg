@@ -16,7 +16,4 @@
 	$userArray[$idClient]->addProductToCart($productArray[$idProduct3]);
 	$userArray[$idClient]->buy($productArray[$idProduct3]);
 
-	echo $userArray[$idClient]->getBillAmount();
-
-
 	require_once __DIR__.'/views/validateOrder.php';
