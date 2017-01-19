@@ -8,15 +8,14 @@
 	$idProduct3 = intval($_POST['product3']);
 
 	$userArray[$idClient]->addProductToCart($productArray[$idProduct1]);
-	$userArray[$idClient]->buy($productArray[$idProduct1]->getPrice()); // A debugger : call function getPrice on integer
+	$userArray[$idClient]->buy($productArray[$idProduct1]);
 
 	$userArray[$idClient]->addProductToCart($productArray[$idProduct2]);
-	$userArray[$idClient]->buy($productArray[$idProduct2]->getPrice());
+	$userArray[$idClient]->buy($productArray[$idProduct2]);
 
 	$userArray[$idClient]->addProductToCart($productArray[$idProduct3]);
-	$userArray[$idClient]->buy($productArray[$idProduct3]->getPrice());
+	$userArray[$idClient]->buy($productArray[$idProduct3]);
 
-	// var_dump($userArray[$idClient]);
 	echo $userArray[$idClient]->getBillAmount();
 
 
