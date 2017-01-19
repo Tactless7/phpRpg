@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+	$productArray = require_once $_SERVER['DOCUMENT_ROOT'].'/data/products.php';
+	$userArray = require_once $_SERVER['DOCUMENT_ROOT'].'/data/users.php';
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,34 +10,33 @@
 <body>
 
 	<h1>Venez Acheter chez nous, c'est presque gratuit !</h1>
-	<form action="">
+
+	<form action="/shopping.php" method="POST">
 		<select name="client" id="client">
-			<option value="janeDoe">Jane Doe</option>
-			<option value="johnSmith">John Smith</option>
+		<?php foreach ($userArray as $key => $value) :?>
+			<option value="<?= $value->getId() ?>"> <?= $value->getEmail() ?> </option>
+		<?php endforeach ?>
 		</select>
+
 		<select name="product1" id="product1">
-			<option value="banane">Banane</option>
-			<option value="poireau">Poireau</option>
-			<option value="veste">Veste</option>
-			<option value="sacAMain">Sac à Main</option>
-			<option value="jeanBrut">Jean Brut</option>
+			<?php foreach ($productArray as $key => $value): ?>
+			<option value="<?= $value->getId() ?>"> <?= $value->getName() ?> </option>
+			<?php endforeach ?>
 		</select>
+
 		<select name="product1" id="product1">
-			<option value="banane">Banane</option>
-			<option value="poireau">Poireau</option>
-			<option value="veste">Veste</option>
-			<option value="sacAMain">Sac à Main</option>
-			<option value="jeanBrut">Jean Brut</option>
+			<?php foreach ($productArray as $key => $value): ?>
+			<option value="<?= $value->getId() ?>"> <?= $value->getName() ?> </option>
+			<?php endforeach ?>
 		</select>
+
 		<select name="product1" id="product1">
-			<option value="banane">Banane</option>
-			<option value="poireau">Poireau</option>
-			<option value="veste">Veste</option>
-			<option value="sacAMain">Sac à Main</option>
-			<option value="jeanBrut">Jean Brut</option>
+			<?php foreach ($productArray as $key => $value): ?>
+			<option value="<?= $value->getId() ?>"> <?= $value->getName() ?> </option>
+			<?php endforeach ?>
 		</select>
+
 		<button type="submit">Buy</button>
-	</form>
-	
+	</form>	
 </body>
 </html>
