@@ -28,12 +28,12 @@
 			array_push($this->_cart, $product);
 		}
 
-		public function deleteProductFromCart($productIndex){
-			unset($this->_cart[$productIndex]);
-		}
-
 		public function buy($product){
 			$this->_billAmount += $product->getPrice();
+		}
+
+		public function deleteProductFromCart($productIndex){
+			unset($this->_cart[$productIndex]);
 		}
 
 	}
