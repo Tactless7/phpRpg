@@ -12,6 +12,5 @@
         <li><?= $value->getName()?></li>
       <?php endforeach; ?>
     </ul>
-    <a href="../shopping.php">Retourner à la page de Shopping</a>
   </body>
 </html>
