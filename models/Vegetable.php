@@ -11,7 +11,7 @@
 			parent::__construct($id, $name, $price);
 			$this->_productorName = $productor;
 			$this->_harvestedAt = $harvested;
-			$this->_isFresh = $this->_isFresh();
+			$this->_isFresh = $this->isFresh();
 		}
 
 		public function isFresh(){
