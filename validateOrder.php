@@ -16,7 +16,17 @@
 	$userArray[$idClient]->addProductToCart($productArray[$idProduct3]);
 	$userArray[$idClient]->buy($productArray[$idProduct3]);
 
-	if($productArray[$idProduct1]->isFresh() && $productArray[$idProduct2]->isFresh() && $productArray[$idProduct3]->isFresh()){
-		require_once __DIR__.'/views/validateOrder.php';
-	} else {
+	$notFreshProducts = [];
+	echo $notFreshProducts ? 'true' : 'false';
+	foreach ($userArray[$idClient]->getCart() as $key => $value) {
+		if(method_exists($value, '_isFresh') && !$value->_isFresh()){
+			array_push($notFreshProducts, $key);
+		}
+	}
+
+
+	if($notFreshProducts){
 		require_once __DIR__.'/views/oldProduct.php';
+	} else {
+		require_once __DIR__.'/views/validateOrder.php';
+	}
