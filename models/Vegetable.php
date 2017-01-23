@@ -1,7 +1,7 @@
-<?php 
-	
+<?php
+
 	require_once 'Product.php';
-	
+
 	class Vegetable extends Product {
 		private $_productorName;
 		private $_harvestedAt;
@@ -14,7 +14,7 @@
 			$this->_isFresh = $this->_isFresh();
 		}
 
-		public function _isFresh(){
+		public function isFresh(){
 			$diff = (time() - $this->_harvestedAt) / (60 * 60);
 			return ($diff < 24) ? true : false;
 		}
