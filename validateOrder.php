@@ -17,10 +17,10 @@
 	$userArray[$idClient]->buy($productArray[$idProduct3]);
 
 	$notFreshProducts = [];
-	echo $notFreshProducts ? 'true' : 'false';
-	foreach ($userArray[$idClient]->getCart() as $key => $value) {
-		if(method_exists($value, '_isFresh') && !$value->_isFresh()){
-			array_push($notFreshProducts, $key);
+	$clientCart = $userArray[$idClient]->getCart();
+	foreach ($clientCart as $key => $value) {
+		if(method_exists($value, 'isFresh') && !$value->isFresh()){
+			array_push($notFreshProducts, $value);
 		}
 	}
 

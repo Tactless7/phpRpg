@@ -6,6 +6,11 @@
   </head>
   <body>
     <h2>Produit périmé</h2>
-    Le produit commandé <?= {nom du produit} ?> n'est pas frais.
+    <p>Les produits suivants ne sont pas frais :</p>
+    <ul>
+      <?php foreach ($notFreshProducts as $key => $value): ?>
+        <li><?= $value->getName()?></li>
+      <?php endforeach; ?>
+    </ul>
   </body>
 </html>
