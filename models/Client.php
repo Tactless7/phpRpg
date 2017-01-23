@@ -1,7 +1,7 @@
-<?php 
-	
+<?php
+
 	require_once 'User.php';
-	
+
 	class Client extends Utilisateur{
 		private $_billAmount;
 		private $_cart = [];
@@ -26,6 +26,10 @@
 
 		public function addProductToCart($product){
 			array_push($this->_cart, $product);
+		}
+
+		public function deleteProductFromCart($productIndex){
+			unset($this->_cart[$productIndex]);
 		}
 
 		public function buy($product){
